@@ -19,8 +19,7 @@ class State(Enum):
     BANNED = "BANNED"
 
 
-class MemberDTO(BaseDTO):
-    id: int
+class CreateUpdateMemberDTO(BaseDTO):
     name: str
     nick_name: str
     age: int
@@ -29,3 +28,7 @@ class MemberDTO(BaseDTO):
     attendance_count_total: int = 0
     role: Role = "MEMBER"
     state: State = "ACTIVE"
+
+
+class MemberDTO(CreateUpdateMemberDTO):
+    id: int

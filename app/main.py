@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from app.api.api_router_v1 import api_router
+
+app = FastAPI(title="CheckNolNol API")
+app.include_router(router=api_router, prefix="/api/v1")
 
 
 @app.get("/")
-async def root():
-    return "Hello world!"
+async def hello():
+    return "hello world!"
