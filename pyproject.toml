@@ -4,10 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["Hyunwook Nam <hw0knam@gmail.com>"]
 readme = "README.md"
-packages = [{include = "check_nolnol_backend"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 fastapi = "^0.88.0"
 python-dotenv = "^0.21.0"
 humps = "^0.2.2"
