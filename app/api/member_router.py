@@ -1,4 +1,5 @@
 from http import HTTPStatus
+from typing import List, Union
 
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
@@ -9,14 +10,14 @@ from app.fixtures.member_dto_fixtures import members
 member_router = APIRouter()
 
 
-def find_member_by_id(id: int) -> MemberDTO | None:
+def find_member_by_id(id: int) -> Union[MemberDTO, None]:
     for member in members:
         if member.id == id:
             return member
     return None
 
 
-@member_router.get("/", response_model=list[MemberDTO])
+@member_router.get("/", response_model=List[MemberDTO])
 async def get_members():
     return members
 
@@ -47,7 +48,7 @@ async def create_member(member: CreateUpdateMemberDTO):
     return JSONResponse(status_code=HTTPStatus.CREATED, content=new_member)
 
 
-@member_router.patch("/{id}", response_model=MemberDTO | None)
+@member_router.patch("/{id}", response_model=MemberDTO)
 async def update_member(id: int, member: CreateUpdateMemberDTO):
     target_member = find_member_by_id(id)
     if target_member is None:
