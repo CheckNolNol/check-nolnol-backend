@@ -1,3 +1,3 @@
 import uvicorn
 
-uvicorn.run("app:app", port=5000, log_level="info")
+uvicorn.run("app:app", port=5000, log_level="info", reload=True)
