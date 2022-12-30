@@ -10,6 +10,7 @@ packages = [{include = "check_nolnol_backend"}]
 python = "^3.11"
 fastapi = "^0.88.0"
 python-dotenv = "^0.21.0"
+humps = "^0.2.2"
 
 
 [tool.poetry.group.dev.dependencies]
