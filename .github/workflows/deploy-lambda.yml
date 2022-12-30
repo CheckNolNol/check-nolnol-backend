@@ -31,7 +31,9 @@ jobs:
 
       - name: Zip deployment package
         run: |
-          zip -r deployment-package.zip ./package
+          cd ./package
+          zip -r ../deployment-package.zip .
+          cd ..
           zip -r deployment-package.zip ./app
 
       - name: Configure AWS credentials
