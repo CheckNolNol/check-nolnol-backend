@@ -17,7 +17,7 @@ def find_member_by_id(id: int) -> Union[MemberDTO, None]:
     return None
 
 
-@member_router.get("/", response_model=List[MemberDTO])
+@member_router.get("", response_model=List[MemberDTO])
 async def get_members():
     return members
 
@@ -31,7 +31,7 @@ async def get_member_by_id(id: int):
     return target_member
 
 
-@member_router.post("/", response_model=MemberDTO)
+@member_router.post("", response_model=MemberDTO)
 async def create_member(member: CreateUpdateMemberDTO):
     new_member = MemberDTO(
         id=3,
