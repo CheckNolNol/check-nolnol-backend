@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "check-nolnol-backend"
+version = "0.1.0"
+description = ""
+authors = ["Hyunwook Nam <hw0knam@gmail.com>"]
+readme = "README.md"
+packages = [{include = "check_nolnol_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.88.0"
+python-dotenv = "^0.21.0"
+
+
+[tool.poetry.group.dev.dependencies]
+uvicorn = {extras = ["standard"], version = "^0.20.0"}
+flake8 = "^6.0.0"
+black = "^22.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
