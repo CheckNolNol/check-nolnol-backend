@@ -10,6 +10,7 @@ python = "^3.9"
 fastapi = "^0.88.0"
 python-dotenv = "^0.21.0"
 humps = "^0.2.2"
+mangum = "^0.17.0"
 
 
 [tool.poetry.group.dev.dependencies]
